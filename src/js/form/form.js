@@ -1,4 +1,6 @@
 import { saveFormData } from './formData';
+import { alert, defaultModules } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
 
 const form = document.querySelector('.feedbackForm');
 
@@ -18,4 +20,9 @@ function onFormSubmit(e) {
     }
 
     saveFormData(formData);
+
+    alert({
+        text: 'Form successfully submit',
+        type: 'success',
+    });
 }
